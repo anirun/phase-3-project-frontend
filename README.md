@@ -11,3 +11,19 @@ As a user:
 
 The base URL for my backend is: `http://localhost:9292`
 
+- Decide on your API endpoints. What data should they return? What kind of CRUD action should they perform? What data do they need from the client?
+
+### Fetch Example
+
+Your React app should make fetch requests to your Sinatra backend! Here's an
+example:
+
+```js
+fetch("http://localhost:9292/test")
+  .then((r) => r.json())
+  .then((data) => console.log(data));
+```
+
+## Developer Notes
+
+- Use [Postman][postman download] to test your endpoints.
