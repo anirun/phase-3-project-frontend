@@ -9,47 +9,49 @@ const style = {
     backgroundColor: "rgb(165, 116, 196)",
     fontWeight: "bold",
     textAlign: "center",
+    horizontalAlign: "center",
+    transform: 'translate(-50%, -50%)',
+    
+}
+
+const activeStyle={
+    fontWeight: "bolder",
+    color: "rgb(121,237,167)"
 }
 
 const Navbar = () => {
     return (
         <div>
             <NavLink
-            activeStyle={{
-                fontWeight: "bolder",
-                color: "rgb(121,237,167)"
-            }}
+                activeStyle={activeStyle}
                 exact
                 style={style}
                 to="/"
-            >Home</NavLink>
+                >Home</NavLink>
             <NavLink
-            activeStyle={{
-                fontWeight: "bolder",
-                color: "rgb(121,237,167)"
-            }}
+                activeStyle={activeStyle}
                 exact
                 style={style}
                 to="/students"
-            >Students</NavLink>
+                >Students</NavLink>
             <NavLink
-            activeStyle={{
-                fontWeight: "bolder",
-                color: "rgb(121,237,167)"
-            }}
+                activeStyle={activeStyle}
                 exact
                 style={style}
                 to="/assignments"
-            >All Assignments</NavLink>
+                >All Assignments</NavLink>
             <NavLink
-            activeStyle={{
-                fontWeight: "bolder",
-                color: "rgb(121,237,167)"
-            }}
+                activeStyle={activeStyle}
                 exact
                 style={style}
                 to="/student/new"
-            >New Student</NavLink>
+                >New Student</NavLink>
+            <NavLink
+                activeStyle={activeStyle}
+                exact
+                style={style}
+                to="/assigments/new"
+                >New Assignment</NavLink>
         </div>
     )
 }

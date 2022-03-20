@@ -3,6 +3,13 @@ import NewAssignmentForm from "./NewAssignmentForm";
 import AssignmentList from "./AssignmentList";
 
 function AssignmentPage() {
+
+  const style = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+
   const [assignments, setAssignments] = useState([])
 
   useEffect(() => {
@@ -16,10 +23,14 @@ function AssignmentPage() {
   console.log(assignments);
 
   return (
-    <main>
-      <NewAssignmentForm assignments={assignments} />
-      <AssignmentList assignments={assignments} />
-    </main>
+    <div>
+      <div style={style}>
+        <NewAssignmentForm assignments={assignments} />
+      </div>
+      <main style={style}>
+        <AssignmentList assignments={assignments} />
+      </main>
+    </div>
   );
 }
 

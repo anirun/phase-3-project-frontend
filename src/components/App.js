@@ -9,11 +9,24 @@ import '../App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 function App() {
+
+  const style={
+    backgroundColor: "#ffc2c2"
+  }
+
+  const center={
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+
   return (
-    <div className="app">
+    <div className="app" style={style}>
       <Router>
         <Header />
-        <Navbar />
+        <div style={center}>
+          <Navbar />
+        </div>
         <Switch>
           <Route path="/students">
             <StudentPage />
@@ -23,6 +36,10 @@ function App() {
             <AssignmentPage />
           </Route>
           
+          <Route path="/assignments/new">
+            <NewAssignmentForm />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>
