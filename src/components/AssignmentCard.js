@@ -1,7 +1,7 @@
 import React from "react";
 
 function AssignmentCard({ assignment }) {
-  const { name, grade } = assignment
+  const { name, grade } = assignment;
   
   return (
     <ul className="card">

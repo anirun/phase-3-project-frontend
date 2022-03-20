@@ -1,15 +1,22 @@
 import React from "react"
 
+const style = {
+    horizontalAlign: "center",
+    color: "black",
+    fontWeight: "bold",
+    textAlign: "center"
+}
+
 function Header() {
+
     return (
-        <header>
-            <h1>
-            G✅ADE
-                <span className="logo" role="img">
-                 
-                </span>
-            </h1>
-        </header>
+        <div>
+            <header style={style}>
+                <h1>
+                G✅ADE
+                </h1>
+            </header>
+        </div>
     );
 }
 

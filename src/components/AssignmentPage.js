@@ -6,7 +6,7 @@ function AssignmentPage() {
   const [assignments, setAssignments] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:6001/assignments")
+    fetch("http://localhost:9292/assignments")
       .then(r => r.json())
       .then(assignmentArray => {
         setAssignments(assignmentArray);
@@ -17,8 +17,8 @@ function AssignmentPage() {
 
   return (
     <main>
-      <NewAssignmentForm />
-      <AssignmentList />
+      <NewAssignmentForm assignments={assignments} />
+      <AssignmentList assignments={assignments} />
     </main>
   );
 }

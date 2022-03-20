@@ -1,9 +1,13 @@
 import React from "react";
-// import AssignmentCard from "./AssignmentCard";
+import AssignmentCard from "./AssignmentCard";
 
-function AssignmentList() {
+function AssignmentList({ assignments }) {
   return (
-    <ul className="cards">{/* render AssignmentCard components in here */}</ul>
+    <ul className="cards">
+      {assignments.map((assignment) => {
+        return <AssignmentCard key={assignment.id} assignment={assignment} />;
+      })}
+      </ul>
   );
 }
 

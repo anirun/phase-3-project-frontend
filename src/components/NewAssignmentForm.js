@@ -3,7 +3,7 @@ import React from "react";
 function NewAssignmentForm() {
     return (
         <div className="new-assignment-form">
-            <h2>New Assignment</h2>
+            <h4>New Assignment</h4>
             <form>
                 <input type="text" name="name" placeholder="Assignment name" />
                 <button type="submit">Add Assignment</button>
