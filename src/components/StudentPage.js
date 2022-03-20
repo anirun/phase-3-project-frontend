@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NewAssignmentForm from "./NewAssignmentForm";
 import StudentList from "./StudentList";
 
 function StudentPage() {
-    // const [students, setStudents] = useState([]);
+    const [students, setStudents] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:9292/students")
             .then((r) => r.json())
-            .then(studentArray => {
-                console.log(studentArray);
+            .then(studentsArray => {
+                setStudents(studentsArray);
             });
     }, [])
 
-    // console.log(students)
+    console.log(students);
 
     return (
         <main>
-            <NewAssignmentForm />
-            <StudentList />
+            <NewAssignmentForm students={students} />
+            <StudentList students={students} />
         </main>
     );
 }
