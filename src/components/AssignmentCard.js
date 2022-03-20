@@ -1,10 +1,12 @@
 import React from "react";
 
-function AssignmentCard() {
+function AssignmentCard({ assignment }) {
+  const { name, grade } = assignment
+  
   return (
-    <li className="card">
-     
-    </li>
+    <ul className="card">
+      <h4> {name} | {grade} </h4>
+    </ul>
   );
 }
 

@@ -1,12 +1,16 @@
 import React from "react";
+import AssignmentCard from "./AssignmentCard"
 
 function StudentCard({ student }) {
-  const { name, grade } = student;
+  const { name, grade, assignments } = student;
   
   return (
     <li className="card">
-      <h4>{name}</h4>
+      <h2>{name}</h2>
       <p>Grade: {grade}</p>
+      <h3>{assignments.map((assignment) => {
+        return <AssignmentCard key={assignment.id} assignment={assignment} />
+      })}</h3>
       <button className="primary">View Assignments</button>
     </li>
   );
