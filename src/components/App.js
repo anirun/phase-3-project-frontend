@@ -11,7 +11,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 function App() {
 
   const style={
-    backgroundColor: "#ffc2c2"
+    backgroundColor: "rgb(96, 53, 120)"
   }
 
   const center={

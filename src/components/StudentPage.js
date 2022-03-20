@@ -3,6 +3,13 @@ import NewAssignmentForm from "./NewAssignmentForm";
 import StudentList from "./StudentList";
 
 function StudentPage() {
+    const style = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'white'
+      }
+    
     const [students, setStudents] = useState([]);
 
     useEffect(() => {
@@ -16,10 +23,14 @@ function StudentPage() {
     console.log(students);
 
     return (
-        <main>
-            <NewAssignmentForm students={students} />
-            <StudentList students={students} />
-        </main>
+        <div>
+            <div style={style}>
+                <NewAssignmentForm students={students} />
+            </div>
+            <main style={style}>
+                <StudentList students={students} />
+            </main>
+        </div>
     );
 }
 

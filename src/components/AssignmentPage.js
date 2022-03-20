@@ -7,7 +7,8 @@ function AssignmentPage() {
   const style = {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    color: 'white'
   }
 
   const [assignments, setAssignments] = useState([])

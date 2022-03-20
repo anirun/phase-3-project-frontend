@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+  
+}
+
+h1 {
+  color: rgb(121,237,167)
+}
+
+.navbar {
+  color: white
+}
+
+div {
+  align-items: "center"
+}
+
+ul {
+  color: 'white'
 }
 
 .App-logo {

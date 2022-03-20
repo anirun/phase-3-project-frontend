@@ -1,10 +1,8 @@
 import React from "react"
 
 const style = {
-    horizontalAlign: "center",
-    color: "black",
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
 }
 
 function Header() {

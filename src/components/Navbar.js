@@ -11,6 +11,7 @@ const style = {
     textAlign: "center",
     horizontalAlign: "center",
     transform: 'translate(-50%, -50%)',
+    color: 'white'
     
 }
 
@@ -21,7 +22,7 @@ const activeStyle={
 
 const Navbar = () => {
     return (
-        <div>
+        <div className="navbar">
             <NavLink
                 activeStyle={activeStyle}
                 exact
