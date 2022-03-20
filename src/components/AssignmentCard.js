@@ -5,7 +5,7 @@ function AssignmentCard({ assignment }) {
   
   return (
     <ul className="card">
-      <h4> {name} | {grade} | <button className="primary">View Assignment</button> </h4>
+      <h4> {name} | {grade} | <button className="primary">Change Grade</button></h4>
     </ul>
   );
 }

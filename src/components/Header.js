@@ -4,9 +4,9 @@ function Header() {
     return (
         <header>
             <h1>
-                Gradebook
+            G✅ADE
                 <span className="logo" role="img">
-                ✅ 📕
+                 
                 </span>
             </h1>
         </header>
