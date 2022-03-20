@@ -11,7 +11,6 @@ function StudentCard({ student }) {
       <h3>{assignments.map((assignment) => {
         return <AssignmentCard key={assignment.id} assignment={assignment} />
       })}</h3>
-      <button className="primary">View Assignments</button>
     </li>
   );
 }
