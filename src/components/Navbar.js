@@ -10,9 +10,7 @@ const style = {
     fontWeight: "bold",
     textAlign: "center",
     horizontalAlign: "center",
-    transform: 'translate(-50%, -50%)',
-    color: 'white'
-    
+    transform: 'translate(-50%, -50%)'
 }
 
 const activeStyle={
