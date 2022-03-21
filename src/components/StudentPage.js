@@ -3,6 +3,7 @@ import NewStudentForm from "./NewStudentForm";
 import StudentList from "./StudentList";
 
 function StudentPage() {
+    
     const style = {
         display: 'flex',
         justifyContent: 'center',
@@ -22,10 +23,18 @@ function StudentPage() {
 
     console.log(students);
 
+    function handleAddStudent(newStudent) {
+        const updatedStudentsArray = [...students, newStudent];
+        setStudents(updatedStudentsArray);
+      }
+
     return (
         <div>
             <div style={style}>
-                <NewStudentForm students={students} />
+                <NewStudentForm 
+                    onAddStudent={handleAddStudent}
+                    students={students} 
+                />
             </div>
             <main style={style}>
                 <StudentList students={students} />

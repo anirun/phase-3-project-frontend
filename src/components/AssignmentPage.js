@@ -20,6 +20,7 @@ function AssignmentPage() {
         setAssignments(assignmentArray);
   });
 }, [])
+
   console.log(assignments);
 
   function handleAddAssignment(newAssignment) {
