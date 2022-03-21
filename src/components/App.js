@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import StudentPage from "./StudentPage";
+import NewStudentForm from "./NewStudentForm";
 import NewAssignmentForm from "./NewAssignmentForm";
 import Navbar from "./Navbar";
 import Home from "./Home";
@@ -28,16 +29,20 @@ function App() {
           <Navbar />
         </div>
         <Switch>
+          <Route path="/students/new">
+            <NewStudentForm />
+          </Route>
+          
           <Route path="/students">
             <StudentPage />
           </Route>
           
-          <Route path="/assignments">
-            <AssignmentPage />
-          </Route>
-          
           <Route path="/assignments/new">
             <NewAssignmentForm />
+          </Route>
+          
+          <Route path="/assignments">
+            <AssignmentPage />
           </Route>
 
           <Route path="/">

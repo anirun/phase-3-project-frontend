@@ -43,8 +43,8 @@ const Navbar = () => {
                 activeStyle={activeStyle}
                 exact
                 style={style}
-                to="/student/new"
-                >New Student</NavLink>
+                to="/students/new"
+                >Add Student</NavLink>
             <NavLink
                 activeStyle={activeStyle}
                 exact

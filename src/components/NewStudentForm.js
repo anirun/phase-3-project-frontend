@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 
-function NewAssignmentForm() {
+function NewStudentForm() {
+    const style = {
+        display: "flex",
+        justifyContent: "center",
+        itemAlign: "center"
+    }
     const [name, setName] = useState("")
 
     console.log(name)
 
     return (
         <div className="new-assignment-form">
-            <h4>New Assignment</h4>
-            <form>
+            <h4 style={style}>New Student</h4>
+            <form style={style}>
                 <input 
                     type="text" 
                     name="name" 
-                    placeholder="Assignment name" 
+                    placeholder="Student name" 
                     value={name} 
                     onChange={(e) => setName(e.target.value)}
                 />
-                <button type="submit">Add Assignment</button>
+                <button type="submit">Add Student</button>
             </form>
         </div>
     )
 }
 
-export default NewAssignmentForm;
+export default NewStudentForm;

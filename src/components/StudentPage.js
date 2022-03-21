@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NewAssignmentForm from "./NewAssignmentForm";
+import NewStudentForm from "./NewStudentForm";
 import StudentList from "./StudentList";
 
 function StudentPage() {
@@ -25,7 +25,7 @@ function StudentPage() {
     return (
         <div>
             <div style={style}>
-                <NewAssignmentForm students={students} />
+                <NewStudentForm students={students} />
             </div>
             <main style={style}>
                 <StudentList students={students} />

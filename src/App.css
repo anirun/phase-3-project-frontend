@@ -4,7 +4,13 @@
 }
 
 h1 {
-  color: rgb(121,237,167)
+  color: rgb(121,237,167);
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
 .navbar {
@@ -31,7 +37,6 @@ ul {
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
