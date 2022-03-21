@@ -3,10 +3,18 @@ import NewStudentForm from "./NewStudentForm";
 import StudentList from "./StudentList";
 
 function StudentPage() {
+
+    const style = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'white'
+      }
+
     const [students, setStudents] = useState([]);
     useEffect(() => {
         fetch("http://localhost:9292/students")
-            .then((r) => r.json())
+            .then(r => r.json())
             .then(studentsArray => {
                 setStudents(studentsArray);
             });
@@ -14,7 +22,7 @@ function StudentPage() {
     function handleAddStudent(newStudent) {
         const updatedStudentsArray = [...students, newStudent];
         setStudents(updatedStudentsArray);
-      }
+    }
     function handleDeleteStudent(deletedStudent) {
         const updatedStudents = students.filter((student) => student.id !== deletedStudent.id);
         setStudents(updatedStudents);
@@ -39,13 +47,6 @@ function StudentPage() {
         setAssignments(updatedAssignments)
     }
 
-    const style = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white'
-      }
-
     return (
         <div>
             <div style={style}>
@@ -58,7 +59,6 @@ function StudentPage() {
                     onDeleteStudent={handleDeleteStudent}
                     onUpdateGrade={handleUpdateGrade}
                     students={students}
-                    assignments={assignments}
                 />
             </main>
         </div>

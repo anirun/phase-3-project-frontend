@@ -17,7 +17,6 @@ function NewStudentForm( {onAddStudent} ) {
           })
         .then(r => r.json())
         .then((newStudent) => onAddStudent(newStudent))
-        // add new assignment to page
         }
     
     const style = {

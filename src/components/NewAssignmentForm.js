@@ -19,13 +19,17 @@ function NewAssignmentForm( {onAddAssignment} ) {
         .then((newAssignment) => onAddAssignment(newAssignment))
         }
         
-        
+    const style = {
+        display: "flex",
+        justifyContent: "center",
+        itemAlign: "center"
+    }
     
 
     return (
         <div className="new-assignment-form">
-            <h4>New Assignment</h4>
-            <form onSubmit={handleSubmit}>
+            <h4 style={style}>New Assignment</h4>
+            <form style={style} onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     name="name" 
