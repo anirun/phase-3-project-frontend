@@ -37,15 +37,11 @@ function App() {
             <StudentPage />
           </Route>
           
-          <Route path="/assignments/new">
-            <NewAssignmentForm />
-          </Route>
-          
-          <Route path="/assignments">
+          <Route exact path="/assignments">
             <AssignmentPage />
           </Route>
 
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>

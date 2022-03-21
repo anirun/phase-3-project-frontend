@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-function NewStudentForm() {
+function NewStudentForm( {onAddStudent} ) {
     const [name, setName] = useState("")
     console.log(name)
 
     function handleSubmit(e) {
         e.preventDefault();
-        // make post req using form data
         fetch("http://localhost:9292/students", {
             method: "POST",
             headers: {
@@ -17,7 +16,7 @@ function NewStudentForm() {
             })
           })
         .then(r => r.json())
-        .then(console.log)
+        .then((newStudent) => onAddStudent(newStudent))
         // add new assignment to page
         }
     

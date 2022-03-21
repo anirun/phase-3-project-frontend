@@ -6,7 +6,6 @@ function NewAssignmentForm( {onAddAssignment} ) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // make post req using form data
         fetch("http://localhost:9292/assignments", {
             method: "POST",
             headers: {
@@ -18,7 +17,6 @@ function NewAssignmentForm( {onAddAssignment} ) {
           })
         .then(r => r.json())
         .then((newAssignment) => onAddAssignment(newAssignment))
-        // add new assignment to page
         }
         
         
