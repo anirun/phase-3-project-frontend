@@ -1,14 +1,33 @@
 import React, { useState } from "react";
 
-function NewAssignmentForm() {
+function NewAssignmentForm( {onAddAssignment} ) {
     const [name, setName] = useState("")
-
     console.log(name)
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        // make post req using form data
+        fetch("http://localhost:9292/assignments", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name
+            })
+          })
+        .then(r => r.json())
+        .then((newAssignment) => onAddAssignment(newAssignment))
+        // add new assignment to page
+        }
+        
+        
+    
 
     return (
         <div className="new-assignment-form">
             <h4>New Assignment</h4>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     name="name" 

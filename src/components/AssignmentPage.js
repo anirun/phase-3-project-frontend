@@ -20,13 +20,20 @@ function AssignmentPage() {
         setAssignments(assignmentArray);
   });
 }, [])
-
   console.log(assignments);
+
+  function handleAddAssignment(newAssignment) {
+    const updatedAssignmentsArray = [...assignments, newAssignment];
+    setAssignments(updatedAssignmentsArray);
+  }
 
   return (
     <div>
       <div style={style}>
-        <NewAssignmentForm assignments={assignments} />
+        <NewAssignmentForm 
+          onAddAssignment={handleAddAssignment} 
+          assignments={assignments} 
+        />
       </div>
       <main style={style}>
         <AssignmentList assignments={assignments} />
