@@ -11,6 +11,7 @@ function StudentPage() {
         color: 'white'
       }
 
+    // initiate useState for "students"
     const [students, setStudents] = useState([]);
     useEffect(() => {
         fetch("http://localhost:9292/students")
@@ -18,9 +19,9 @@ function StudentPage() {
             .then(studentsArray => {
                 setStudents(studentsArray);
             });
-    }, [])
+    })
     function handleAddStudent(newStudent) {
-        const updatedStudentsArray = [...students, newStudent];
+        const updatedStudentsArray = [newStudent, ...students];
         setStudents(updatedStudentsArray);
     }
     function handleDeleteStudent(deletedStudent) {
@@ -28,25 +29,6 @@ function StudentPage() {
         setStudents(updatedStudents);
     }
     
-    const [assignments, setAssignments] = useState([]);
-    useEffect(() => {
-        fetch("http://localhost:9292/assignments")
-            .then((r) => r.json())
-            .then(assignmentsArray => {
-                setAssignments(assignmentsArray);
-            });
-    }, [])
-    function handleUpdateGrade(updatedAssignment) {
-        const updatedAssignments = assignments.map((assignment) => {
-          if (assignment.id === updatedAssignment.id) {
-            return updatedAssignment;
-          } else {
-            return assignment;
-          }
-        });
-        setAssignments(updatedAssignments)
-    }
-
     return (
         <div>
             <div style={style}>
@@ -57,7 +39,6 @@ function StudentPage() {
             <main style={style}>
                 <StudentList 
                     onDeleteStudent={handleDeleteStudent}
-                    onUpdateGrade={handleUpdateGrade}
                     students={students}
                 />
             </main>

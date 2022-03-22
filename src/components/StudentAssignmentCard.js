@@ -26,7 +26,8 @@ function StudentAssignmentCard({ assignment, onUpdateGrade }) {
       <h4> {name} | {grade} | 
         <form >
           <input 
-            type="integer" 
+            type="integer"
+            maxLength="3" 
             name="grade" 
             placeholder="0" 
             value={newGrade} 
