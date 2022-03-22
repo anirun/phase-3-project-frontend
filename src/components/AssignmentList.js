@@ -2,6 +2,7 @@ import React from "react";
 import AssignmentCard from "./AssignmentCard";
 
 function AssignmentList({ assignments }) {
+  
   return (
     <ul className="cards">
       {assignments.map((assignment) => {

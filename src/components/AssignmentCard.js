@@ -4,7 +4,7 @@ function AssignmentCard({ assignment }) {
 
   return (
     <ul className="card">
-      <h4> {assignment} | | <button className="primary">View Grades</button></h4>
+      <h4> {assignment.name} | | <button className="primary">View Grades</button></h4>
     </ul>
   );
 }
