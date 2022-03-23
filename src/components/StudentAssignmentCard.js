@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function StudentAssignmentCard({ assignment, onUpdateGrade }) {
+function StudentAssignmentCard({ assignment, handleUpdateGrade }) {
   const { name, grade, id } = assignment
 
   const [newGrade, setNewGrade] = useState("")
@@ -18,7 +18,7 @@ function StudentAssignmentCard({ assignment, onUpdateGrade }) {
         })
       })
         .then((r) => r.json())
-        .then((updatedAssignment) => onUpdateGrade(updatedAssignment));
+        .then((updatedAssignment) => handleUpdateGrade(updatedAssignment));
     }
 
   return (

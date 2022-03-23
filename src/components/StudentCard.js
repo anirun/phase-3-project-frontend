@@ -10,7 +10,7 @@ function StudentCard({ student, onDeleteStudent }) {
       .then(assignmentsArray => {
         setAssignments(assignmentsArray);
       });
-  })
+  }, [])
 
   function handleUpdateGrade(updatedAssignment) {
     const updatedAssignments = assignments.map((assignment) => {

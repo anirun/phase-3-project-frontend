@@ -25,12 +25,6 @@ const Navbar = () => {
                 activeStyle={activeStyle}
                 exact
                 style={style}
-                to="/"
-                >Home</NavLink>
-            <NavLink
-                activeStyle={activeStyle}
-                exact
-                style={style}
                 to="/students"
                 >Students</NavLink>
             <NavLink
@@ -39,12 +33,6 @@ const Navbar = () => {
                 style={style}
                 to="/assignments"
                 >All Assignments</NavLink>
-            <NavLink
-                activeStyle={activeStyle}
-                exact
-                style={style}
-                to="/students/new"
-                >Add Student</NavLink>
         </div>
     )
 }

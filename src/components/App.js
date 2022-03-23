@@ -28,18 +28,12 @@ function App() {
           <Navbar />
         </div>
         <Switch>
-          <Route path="/students/new">
-            <NewStudentForm />
-          </Route>
-          
           <Route path="/students">
             <StudentPage />
           </Route>
-          
           <Route exact path="/assignments">
             <AssignmentPage />
           </Route>
-
           <Route exact path="/">
             <Home />
           </Route>

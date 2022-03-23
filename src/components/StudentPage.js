@@ -19,7 +19,7 @@ function StudentPage() {
             .then(studentsArray => {
                 setStudents(studentsArray);
             });
-    })
+    }, [])
     function handleAddStudent(newStudent) {
         const updatedStudentsArray = [newStudent, ...students];
         setStudents(updatedStudentsArray);

@@ -14,7 +14,7 @@ function AssignmentPage() {
   const [assignments, setAssignments] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/assignments")
+    fetch("http://localhost:9292/assignments/all")
       .then(r => r.json())
       .then(assignmentArray => {
         setAssignments(assignmentArray);
@@ -24,7 +24,7 @@ function AssignmentPage() {
   console.log(assignments);
 
   function handleAddAssignment(newAssignment) {
-    const updatedAssignmentsArray = [...assignments, newAssignment];
+    const updatedAssignmentsArray = [newAssignment, ...assignments];
     setAssignments(updatedAssignmentsArray);
   }
 
