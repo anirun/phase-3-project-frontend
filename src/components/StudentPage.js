@@ -20,10 +20,7 @@ function StudentPage() {
                 setStudents(studentsArray);
             });
     }, [])
-    function handleAddStudent(newStudent) {
-        const updatedStudentsArray = [newStudent, ...students];
-        setStudents(updatedStudentsArray);
-    }
+    
     function handleDeleteStudent(deletedStudent) {
         const updatedStudents = students.filter((student) => student.id !== deletedStudent.id);
         setStudents(updatedStudents);
@@ -32,9 +29,7 @@ function StudentPage() {
     return (
         <div>
             <div style={style}>
-                <NewStudentForm 
-                    onAddStudent={handleAddStudent}
-                />
+                <NewStudentForm />
             </div>
             <main style={style}>
                 <StudentList 

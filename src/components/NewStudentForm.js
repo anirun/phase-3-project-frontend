@@ -1,22 +1,37 @@
 import React, { useState } from "react";
+import {useHistory} from "react-router-dom";
 
-function NewStudentForm( {onAddStudent} ) {
-    const [name, setName] = useState("")
-    console.log(name)
+function NewStudentForm() {
+    const [student, setStudent] = useState({
+        name: ""
+    })
+    const history = useHistory();
+
+    const handleChange = (e) => {
+        setStudent({
+            ...student, 
+            [e.target.name]: e.target.value
+        })
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("http://localhost:9292/students", {
+        if ([student.name].some(val => val.trim() === "")) {
+            alert("You must provide a name!")
+        }
+
+        const newStudent = {
+            name: student.name
+        }
+
+        fetch(`http://localhost:9292/students`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                name: name
-            })
+            body: JSON.stringify(newStudent)
           })
-        .then(r => r.json())
-        .then((newStudent) => onAddStudent(newStudent))
+        .then(() => history.push("/students"))
         }
     
     const style = {
@@ -32,9 +47,9 @@ function NewStudentForm( {onAddStudent} ) {
                 <input 
                     type="text" 
                     name="name" 
-                    placeholder="Student name" 
-                    value={name} 
-                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Student name?" 
+                    value={student.name} 
+                    onChange={handleChange}
                 />
                 <button type="submit">Add Student</button>
             </form>
